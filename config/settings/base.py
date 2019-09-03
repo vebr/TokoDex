@@ -18,6 +18,7 @@ if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
     env.read_env(str(ROOT_DIR.path(".env")))
 
+print(env.read_env(str(ROOT_DIR.path(".env"))))
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
@@ -45,7 +46,7 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    "default": env.db("DATABASE_URL", default="postgres://localhost/tdx")
+    "default": env.db("DATABASE_URL", default="postgres://localhost/tdx?user=skye&password=Kocak123")
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
