@@ -1,5 +1,10 @@
 [run]
-include = tdx/*
-omit = *migrations*, *tests*
-plugins =
-    django_coverage_plugin
+branch = True
+omit = *migrations*,
+       *urls*,
+       *test*,
+       *admin*,
+       ./manage.py,
+       ./tdx/config/*,
+       ./tdx/wsgi.py,
+       *__init__*
