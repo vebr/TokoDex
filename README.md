@@ -1,7 +1,6 @@
 # Tokodex
 
 [![Build Status](https://travis-ci.org/vebr/Tokodex.svg?branch=master)](https://travis-ci.org/vebr/Tokodex)
-[![Built with](https://img.shields.io/badge/Built_with-Cookiecutter_Django_Rest-F7B633.svg)](https://github.com/agconti/cookiecutter-django-rest)
 
 Create a website for owner of online store so they can put all their information here. Check out the project's [documentation](http://vebr.github.io/Tokodex/).
 
