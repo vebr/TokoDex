@@ -1,5 +1,5 @@
 import { errorMessages } from '../constants/messages';
-import { Firebase, FirebaseRef } from '../lib/firebase';
+import { Firebase, FirebaseRef } from './firebase';
 
 export default {
   state: {}, // initial state
