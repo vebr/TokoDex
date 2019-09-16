@@ -21,6 +21,7 @@ class Common(Configuration):
         'rest_framework',            # utilities for rest apis
         'rest_framework.authtoken',  # token authentication
         'django_filters',            # for filtering rest endpoints
+        'corsheaders',
 
         # Your apps
         'tdx.users',
@@ -36,8 +37,9 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'corsheaders.middleware.CorsMiddleware',
     )
-
+    CORS_ORIGIN_ALLOW_ALL = True
     ALLOWED_HOSTS = ["*"]
     ROOT_URLCONF = 'tdx.urls'
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
