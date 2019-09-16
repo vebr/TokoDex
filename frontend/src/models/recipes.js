@@ -1,9 +1,9 @@
-import { Firebase, FirebaseRef } from '../lib/firebase';
+import { Firebase, FirebaseRef } from './firebase';
 import initState from '../store/recipes';
 
 export default {
   /**
-   *  Initial state
+   *  Initial state dsda
    */
   state: {
     recipes: initState.recipes,
