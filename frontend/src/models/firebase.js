@@ -13,7 +13,7 @@ if (apiKey && authDomain && databaseURL && storageBucket && messagingSenderId) {
   });
 
   firebaseInitialized = true;
-}dsads
+}
 
 export const FirebaseRef = firebaseInitialized ? firebase.database().ref() : null;
 export const Firebase = firebaseInitialized ? firebase : null;
