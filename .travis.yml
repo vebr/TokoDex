@@ -30,6 +30,8 @@ matrix:
         pip: true
     
     - language: node_js
+      node_js:
+        - 8.16.0
       cache:
         directories:
         - /frontend/node_modules
