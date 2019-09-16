@@ -13,7 +13,7 @@ matrix:
 
       after_success:
         - if [ "$TRAVIS_BRANCH" == "master" ]; then
-          docker login --usernamme="skye.dox@gmail.com" --password="2bcd63fa-8e99-4cff-8a04-692dc2e574e2" registry.heroku.com;
+          docker login --username="skye.dox@gmail.com" --password="2bcd63fa-8e99-4cff-8a04-692dc2e574e2" registry.heroku.com;
           docker tag web registry.heroku.com/tdx-prod/web;
           docker push registry.heroku.com/tdx-prod/web;
           fi
