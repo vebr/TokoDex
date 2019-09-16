@@ -37,5 +37,5 @@ matrix:
         - /frontend/node_modules
       before_install: cd frontend
       script:
-        - npm run build
+        - yarn web-bundle
 
