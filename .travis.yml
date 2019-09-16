@@ -1,28 +1,33 @@
 sudo: required
-language: python
 services:
   - docker
-python:
-  - "3.6"
-before_script:
-  - docker-compose build
-script:
-  - docker-compose run --rm web bash -c "flake8 ."
+matrix:
+  include:
+    - language: python
+      python:
+        - "3.6"
+      before_script:
+        - docker-compose build
+      script:
+        - docker-compose run --rm web bash -c "flake8 ."
 
-after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
-    docker tag web registry.heroku.com/tdx-prod/web;
-    docker push registry.heroku.com/tdx-prod/web;
-    fi
-  - if [ "$TRAVIS_BRANCH" == "qa" ]; then
-    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
-    docker tag web registry.heroku.com/tdx-qa/web;
-    docker push registry.heroku.com/tdx-qa/web;
-    fi
+      after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+          docker login --usernamme="skye.dox@gmail.com" --password="2bcd63fa-8e99-4cff-8a04-692dc2e574e2" registry.heroku.com;
+          docker tag web registry.heroku.com/tdx-prod/web;
+          docker push registry.heroku.com/tdx-prod/web;
+          fi
+        - if [ "$TRAVIS_BRANCH" == "qa" ]; then
+          docker login --username="skye.dox@gmail.com" --password="2bcd63fa-8e99-4cff-8a04-692dc2e574e2" registry.heroku.com;
+          docker tag web registry.heroku.com/tdx-qa/web;
+          docker push registry.heroku.com/tdx-qa/web;
+          fi
 
-notifications:
-  email: false
+      notifications:
+        email: false
 
-cache:
-  pip: true
+      cache:
+        pip: true
+    
+    - language: node_js
+      script: npm build
