@@ -30,4 +30,10 @@ matrix:
         pip: true
     
     - language: node_js
-      script: npm build
+      cache:
+        directories:
+        - /frontend/node_modules
+      before_install: cd frontend
+      script:
+        - npm run build
+
